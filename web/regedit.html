@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <script>
+
+       window.onload = function () {
+
+           //1.获取图片对象
+           var img = document.getElementById("checkcode") ;
+           //给img绑定单击事件
+           img.onclick = function () {
+               var date = new Date().getTime();
+               img.src="/day15/checkCodeServlet?"+date
+           }
+
+           var change = document.getElementById("change");
+           change.onclick=function () {
+               var img = document.getElementById("checkcode") ;
+               //给img绑定单击事件
+               var date = new Date().getTime();
+               img.src="/day15/checkCodeServlet?"+date
+           }
+
+       }
+
+
+
+
+
+    </script>
+
+</head>
+<body>
+
+    <img id="checkcode" src="/day15/checkCodeServlet">
+    <a id="change" href="#">看不清换一张?</a>
+</body>
+</html>

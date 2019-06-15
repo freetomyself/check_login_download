@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+<script>
+
+    window.onload=function () {
+        var img = document.getElementById("checkcode");
+        img.onclick=function () {
+            var date = new Date().getTime();
+            img.src= "/day15/checkCodetestServlet?"+date
+        }
+
+        var bt = document.getElementById("change");
+        bt.onclick=function () {
+            var img = document.getElementById("checkcode");
+            var date = new Date().getTime()
+            img.src = "/day15/checkCodetestServlet?"+date
+        }
+
+        var us = document.getElementById("user");
+        us.focus()
+
+    }
+
+
+</script>
+
+
+</head>
+<body>
+<form action="/day15/loginServlet" method="post">
+    账号：<input type="text" id="user" name="username"><br>
+    密码：<input type="password" id="pass" name="password">&nbsp;&nbsp;<input type="submit" value="submit"><br>
+    <input type="text" id="checkcodevalue" style="width: 30px" maxlength="4">
+    <img id="checkcode" src="/day15/checkCodetestServlet">
+    <a id="change" href="#">看不清换一张?</a>
+</form>
+</body>
+</html>
+
