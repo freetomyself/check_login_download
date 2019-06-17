@@ -56,8 +56,11 @@
         </tr>
     </table>
 </form>
-<div><%= request.getAttribute("msg_cc")==null?"":request.getAttribute("msg_cc")%></div>
-<div><%= request.getAttribute("msg_pp")==null?"":request.getAttribute("msg_pp")%></div>
+<%--<div><%= request.getAttribute("msg_cc")==null?"":request.getAttribute("msg_cc")%></div>--%>
+<%--<div><%= request.getAttribute("msg_pp")==null?"":request.getAttribute("msg_pp")%></div>--%>
+<%--使用el表达式替换上面操作--%>
+${requestScope.msg_cc}
+${requestScope.msg_pp}
 </body>
 </html>
 
