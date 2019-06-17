@@ -9,14 +9,16 @@
         var img = document.getElementById("checkcode");
         img.onclick=function () {
             var date = new Date().getTime();
-            img.src= "/day15/checkCodetestServlet?"+date
+            <%--动态获取虚拟目录--%>
+            img.src= "${pageContext.request.contextPath}/checkCodetestServlet?"+date
         }
 
         var bt = document.getElementById("change");
         bt.onclick=function () {
             var img = document.getElementById("checkcode");
             var date = new Date().getTime()
-            img.src = "/day15/checkCodetestServlet?"+date
+            <%--动态获取虚拟目录--%>
+            img.src = "${pageContext.request.contextPath}/checkCodetestServlet?"+date
         }
 
         var us = document.getElementById("user");
@@ -34,7 +36,8 @@
 
 </head>
 <body>
-<form action="/day15/loginServlet" method="post">
+<%--动态获取虚拟目录--%>
+<form action="${pageContext.request.contextPath}/loginServlet" method="post">
     <table>
         <tr>
             <td>用户名</td>
@@ -59,8 +62,10 @@
 <%--<div><%= request.getAttribute("msg_cc")==null?"":request.getAttribute("msg_cc")%></div>--%>
 <%--<div><%= request.getAttribute("msg_pp")==null?"":request.getAttribute("msg_pp")%></div>--%>
 <%--使用el表达式替换上面操作--%>
-${requestScope.msg_cc}
-${requestScope.msg_pp}
+<div>
+    ${requestScope.msg_cc}
+    ${requestScope.msg_pp}
+</div>
 </body>
 </html>
 
