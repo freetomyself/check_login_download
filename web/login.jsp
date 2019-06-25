@@ -52,7 +52,7 @@
             <td><input type="text" name="checkcode" style="width: 50px" maxlength="4"></td>
         </tr>
         <tr>
-            <td colspan="2"><img id="checkcode" src="/day15/checkCodetestServlet"><a id="change" href="#">看不清换一张?</a></td>
+            <td colspan="2"><img id="checkcode" src="${pageContext.request.contextPath}/checkCodetestServlet"><a id="change" href="#">看不清换一张?</a></td>
         </tr>
         <tr>
             <td colspan="2"><input type="submit" value="submit"></td>
@@ -65,6 +65,8 @@
 <div>
     ${requestScope.msg_cc}
     ${requestScope.msg_pp}
+        <%-- 用于判断点击次数 --%>
+    <%--${sessionScope.cs}--%>
 </div>
 </body>
 </html>

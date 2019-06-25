@@ -1,8 +1,6 @@
-package cn.itcast.servlet;
+package cn.itcast.web.servlet;
 
 import javax.imageio.ImageIO;
-import javax.imageio.stream.ImageOutputStream;
-import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -11,6 +9,8 @@ import javax.servlet.http.HttpServletResponse;
 import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.io.IOException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.Random;
 
 /**
@@ -21,6 +21,7 @@ import java.util.Random;
 
 @WebServlet("/checkCodetestServlet")
 public class CheckCodetestServlet extends HttpServlet {
+    public static  int cs = 0;
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         int width = 100;
         int height = 50;
@@ -53,8 +54,19 @@ public class CheckCodetestServlet extends HttpServlet {
             gs.drawString(c + "", width / 5 * i, height / 2 + 5);
         }
         String value = sb.toString();
-        System.out.println(value);
+        Date date = new Date();
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy年MM月dd日 hh:mm:ss");
+        String s = simpleDateFormat.format(date);
+        System.out.println(s +"验证码："+ value);
         request.getSession().setAttribute("checkcode_session",value);
+//        添加判断次数
+
+//        if(request.getSession().getAttribute("cs")!=null) {
+//            request.getSession().setAttribute("cs",cs++ );
+//        }else{
+//            request.getSession().setAttribute("cs",cs);
+//        }
+//        System.out.println(cs);
         gs.setColor(Color.GREEN);
 //        画干扰线
         for (int i = 1; i < 10; i++) {

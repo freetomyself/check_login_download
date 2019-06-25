@@ -1,4 +1,4 @@
-package cn.itcast.servlet;
+package cn.itcast.web.servlet;
 
 import cn.itcast.bean.User;
 import cn.itcast.dao.UserDao;
@@ -42,7 +42,7 @@ public class LoginServlet extends HttpServlet {
         String checkcode_session = (String) session.getAttribute("checkcode_session");
 //        防止用户反复使用session实现不需要验证码登录
         session.removeAttribute("checkcode_session");
-
+        System.out.println("进来了！");
 
 //        忽略验证码大小写比较字符串
         if (checkcode_session!=null && checkcode_session.equalsIgnoreCase(checkcode)){

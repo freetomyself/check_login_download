@@ -1,4 +1,4 @@
-package cn.itcast.servlet;
+package cn.itcast.web.servlet;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;

@@ -1,7 +1,6 @@
-package cn.itcast.servlet;
+package cn.itcast.web.servlet;
 
 import javax.imageio.ImageIO;
-import javax.imageio.stream.ImageOutputStream;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;

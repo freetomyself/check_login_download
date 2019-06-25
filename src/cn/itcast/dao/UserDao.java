@@ -22,7 +22,8 @@ public class UserDao {
      * @return 返回用户详细信息
      */
     public User login(User loginuser){
-        String sql="select * from User where username = ? and password = ?";
+//        查询优化
+        String sql="select * from User where username = ? and password = ? LIMIT 1";
         try {
             User user = template.queryForObject(sql,
                     new BeanPropertyRowMapper<User>(User.class),
